@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecionamento</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: #fff;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="message">
+    <p>Você está acessando pelo computador. Clique abaixo para ir ao site:</p>
+    <a href="https://seudestinosite.com" target="_blank">Ir para o site</a>
+  </div>
+
+  <script>
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Detecta se é celular
+    const isMobile = /android|iphone|ipad|ipod|windows phone/i.test(userAgent);
+
+    if (isMobile) {
+      // Redireciona automaticamente para o site verdadeiro
+      window.location.href = "https://seudestinosite.com";
+    } else {
+      // Mostra a mensagem para desktop (já está no HTML)
+      document.getElementById("message").style.display = "block";
+    }
+  </script>
+</body>
+</html>
