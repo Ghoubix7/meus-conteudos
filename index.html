@@ -3,45 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecionamento</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>Acesso Restrito</title>
   <style>
     body {
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       font-family: Arial, sans-serif;
-      text-align: center;
       background: #111;
       color: #fff;
+      text-align: center;
     }
-    a {
-      color: #1e90ff;
-      text-decoration: none;
-      font-weight: bold;
+    .container {
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 14px;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
-  <div id="message">
-    <p>Você está acessando pelo computador. Clique abaixo para ir ao site:</p>
-    <a href="https://www.youtube.com/" target="_blank">Ir para o site</a>
+  <div class="container">
+    <h1>Acesso exclusivo</h1>
+    <p>Este conteúdo é destinado apenas para dispositivos móveis.</p>
   </div>
-
-  <script>
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-    // Detecta se é celular
-    const isMobile = /android|iphone|ipad|ipod|windows phone/i.test(userAgent);
-
-    if (isMobile) {
-      // Redireciona automaticamente para o site verdadeiro
-      window.location.href = "https://oglarah-conteudos.vercel.app/";
-    } else {
-      // Mostra a mensagem para desktop (já está no HTML)
-      document.getElementById("message").style.display = "block";
-    }
-  </script>
 </body>
 </html>
